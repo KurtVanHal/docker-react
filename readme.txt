@@ -53,3 +53,5 @@ code op te vragen en vervolgens te testen en te deployen naar AWS (de hosting).
 
 Om Travis duidelijk te maken wat er moet worden gedaan met de code, worden instructies
 voorzien in een .travis.yml bestand. Verdere uitleg kan hier worden gevonden.
+
+De toegevoegde foto 'workflow.jpg' toont de volledige workflow
