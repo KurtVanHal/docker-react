@@ -15,7 +15,7 @@ script:
   # travis vereist een status 0 exit code van het process. Onderstaand commando
   # doet dit standaard niet, maar wacht op input voor verdere tests.
   # -- --coverage zal het process wel beeïndigen.
-  - docker run kurtvanhal/docker-react npm run test -- --coverage
+  - docker run -e CI=true kurtvanhal/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
