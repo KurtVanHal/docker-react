@@ -1,0 +1,18 @@
+# Het aanwezig zijn van de .travis.yml is voldoende om aan Travis te laten weten
+# dat het bij push naar github onderstaande commandos moet uitvoeren.
+
+# Er wordt superuser machtiging vereist
+sudo: required
+# docker moet geïnstalleerd zijn om de commandos te kunnen uitvoeren.
+services:
+  - docker
+
+# image opbouwen
+before_install:
+  - docker build -t kurtvanhal/docker-react -f Dockerfile.dev .
+
+script:
+  # travis vereist een status 0 exit code van het process. Onderstaand commando
+  # doet dit standaard niet, maar wacht op input voor verdere tests.
+  # -- --coverage zal het process wel beeïndigen.
+  - docker run kurtvanhal/docker-react npm run tests -- --coverage

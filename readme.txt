@@ -1,3 +1,5 @@
+CHAPTER 6 Creating production grade workflow
+
 Het opzet van dit hoofdstuk is een complete production workflow te voorzien
 voor, in dit geval, een react app.
 
@@ -41,3 +43,13 @@ Wanneer naar productie wordt gegaan moet gebruik worden gemaakt van nginx om
 de statische bestanden, die voortkomen uit npm run build, beschikbaar te maken.
     
     => zie Dockerfile
+
+
+CHAPTER 7 Travis CI en AWS
+
+In hoofdstuk 7 wordt de workflow verder uitgebreid. Hier wordt gebruik gemaakt van 
+Travis CI om veranderingen die naar github worden gepushed op te vangen, de gewijzigde 
+code op te vragen en vervolgens te testen en te deployen naar AWS (de hosting).
+
+Om Travis duidelijk te maken wat er moet worden gedaan met de code, worden instructies
+voorzien in een .travis.yml bestand.
