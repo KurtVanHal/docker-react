@@ -53,3 +53,14 @@ code op te vragen en vervolgens te testen en te deployen naar AWS (de hosting).
 
 Om Travis duidelijk te maken wat er moet worden gedaan met de code, worden instructies
 voorzien in een .travis.yml bestand. Verdere uitleg kan hier worden gevonden.
+
+De toegevoegde foto 'workflow.jpg' toont de volledige workflow
+
+Het instellen van de AWS met Travis kan online verder worden onderzocht.
+
+Als laatste wordt een nieuwe branch aangemaakt die wordt gebruikt voor development
+    git checkout -b feature 
+ 
+Vervolgens wordt "git push origin feature" gebruikt om een nieuwe branch in de repo
+te maken en naar te pushen. Hier moet nu nog een pull request worden aangemaakt die 
+de feature branch zal mergen met de master (dit gebeurt op github)
