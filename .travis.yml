@@ -16,3 +16,16 @@ script:
   # doet dit standaard niet, maar wacht op input voor verdere tests.
   # -- --coverage zal het process wel beeïndigen.
   - docker run kurtvanhal/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-506608664154"
+  bucket_path: "dokcer-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"

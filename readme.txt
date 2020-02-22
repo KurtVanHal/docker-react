@@ -52,4 +52,4 @@ Travis CI om veranderingen die naar github worden gepushed op te vangen, de gewi
 code op te vragen en vervolgens te testen en te deployen naar AWS (de hosting).
 
 Om Travis duidelijk te maken wat er moet worden gedaan met de code, worden instructies
-voorzien in een .travis.yml bestand.
+voorzien in een .travis.yml bestand. Verdere uitleg kan hier worden gevonden.
