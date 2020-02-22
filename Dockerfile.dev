@@ -1,0 +1,10 @@
+# Dockerfile die enkel wordt gebruikt in development (.dev)
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install
+COPY . .
+
+CMD ["npm", "run", "start"]

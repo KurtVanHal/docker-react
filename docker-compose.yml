@@ -1,0 +1,33 @@
+# Dit document is in principe gelijk aan het onderstaand docker-cli commandoo
+#   docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>
+version: "3"
+
+services:
+  web:
+    # build . verwijst naar Dockerfile <= niet Dockerfile.dev
+    # build: .
+    build:
+      # context verwijst naar de locatie waar alle bestanden voor dit image
+      # vandaan moet komen (in dit geval de cwd)
+      context: .
+      # gebruik Dockerfile.dev
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+  # Het uitvoeren van de tests gebeurt in een aparte container. Er wordt
+  # gebruik gemaakt van dezelfde Dockerfile.dev met een ander CMD
+  # ports zijn niet nodig
+
+  # Het nadeel is dat er geen interactie mogelijk is met de tests container
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
